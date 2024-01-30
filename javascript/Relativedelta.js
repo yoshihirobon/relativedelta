@@ -26,7 +26,6 @@ class Relativedelta {
     this.setMonths(months);
  
     let dtm = this.getDTM(baseDay);
-    // console.log(dtm);
  
     let gt = (a, b) => a > b;
     let lt = (a, b) => a < b;
