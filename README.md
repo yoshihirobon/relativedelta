@@ -49,9 +49,28 @@ var s = String.Format("{0}: {1} 年と {2} ヶ月と {3} 日と {4} 時間と {5
 Console.WriteLine(s);
 ```
 
+## Swift
+
+```
+import Foundation
+
+let cal = Calendar(identifier: .gregorian)
+let df = DateFormatter()
+df.dateFormat = "yyyy-MM-dd'T'HH:mm:ss"
+
+let baseDate = cal.setY(2012, 1, 1, 0, 0, 0)!
+print("\(df.string(from: baseDate)): <-- 基準日")
+
+let day = cal.setY(2013, 1, 30, 23, 59, 59)!
+let res = try Relativedelta(baseDay: baseDate, day: day)
+print("\(df.string(from: day)): \(res.year!) 年と \(res.month!) ヶ月と \(res.day!) 日と \(res.hour!) 時間と \(res.minute!) 分と \(res.second!) 秒")
+```
+
 ## JavaScript
 
 ```
+const Relativedelta = require('./Relativedelta');
+
 function fmtDate(day) {
   let s1 = day.toLocaleString('ja-JP', {
     timeZone: 'Asia/Tokyo', year: 'numeric', month: '2-digit', day: '2-digit',
