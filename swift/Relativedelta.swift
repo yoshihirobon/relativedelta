@@ -18,7 +18,6 @@ class Relativedelta {
  
   init(baseDay: Date, day: Date) throws {
  
-    // if (day.compare(baseDay) == .orderedAscending) {
     if day < baseDay {
       throw NSError(domain: "Illegal Argument Exception", code: -1, userInfo: nil)
     }
@@ -35,7 +34,6 @@ class Relativedelta {
     let lt: (Date, Date) -> ComparisonResult = { $1.compare($0) }
     var compare: (Date, Date) -> ComparisonResult
     var increment = 0
-    // if (day.compare(baseDay) == .orderedAscending) {
     if day < baseDay {
       compare = gt
       increment = 1
@@ -50,7 +48,6 @@ class Relativedelta {
       dtm = self.getDTM(other: baseDay)
     }
  
-    // let interval = DateInterval(start: day, end: dtm)
     let interval = DateInterval(start: dtm, end: day)
     self.seconds = Int(interval.duration)
  
@@ -146,7 +143,6 @@ class Relativedelta {
     if self.leapdays > 0 && m > 2 && self.isYearLeapYear(y) {
       days += self.leapdays
     }
-    //let ret = cal.setY(repl.year, M:repl.month, d:repl.day, h:repl.hour, m:repl.minute, s:repl.second)!
     let ret = cal.setY(repl.year, repl.month, repl.day, repl.hour, repl.minute, repl.second)!
     comps = DateComponents()
     comps.day = days
