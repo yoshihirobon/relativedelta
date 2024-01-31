@@ -94,36 +94,7 @@ console.log(
 ## C
 
 ```
-#define _XOPEN_SOURCE
-#include <math.h>
-#include <stdio.h>
-#include <string.h>
-#include <sys/param.h>
-#include <time.h>
-
-struct tm getDate(int y, int m, int d, int hour, int min, int sec) {
-  struct tm ts = {0};
-  time_t new_time;
-  struct tm *new_ts = {0};
-
-  ts.tm_year = y - 1900;
-  ts.tm_mon = m - 1;
-  ts.tm_mday = d;
-  ts.tm_hour = hour;
-  ts.tm_min = min;
-  ts.tm_sec = sec;
-
-  new_time = mktime(&ts);
-  new_ts = localtime(&new_time);
-  return *new_ts;
-}
-
-char *getPrintDate(struct tm *ts) {
-  static char buf[255] = {0};
-  memset(buf, 0, sizeof(buf));
-  strftime(buf, sizeof(buf), "%Y-%m-%dT%H:%M:%S", ts);
-  return buf;
-}
+#include "relativedelta.h"
 
 int main(void) {
 
