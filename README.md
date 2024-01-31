@@ -2,7 +2,7 @@
 
 ## Java
 
-```
+```Java
 var baseDay = LocalDateTime.of(2012, 1, 1, 0, 0, 0);
 System.out.printf("%s: <-- 基準日\n", baseDay.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME));
 
@@ -19,7 +19,7 @@ System.out.println(s);
 
 ## Kotlin
 
-```
+```kotlin
 val baseDay = LocalDateTime.of(2012, 1, 1, 0, 0, 0)
 System.out.printf("%s: <-- 基準日\n", baseDay.format(DateTimeFormatter.ISO_LOCAL_DATE_TIME))
 
@@ -38,7 +38,7 @@ println(s)
 
 ## C#
 
-```
+```C#
 DateTime baseDay = new DateTime(2012, 1, 1, 0, 0, 0);
 Console.WriteLine("{0}: <-- 基準日", baseDay.ToString("s"));
 
@@ -51,7 +51,7 @@ Console.WriteLine(s);
 
 ## Swift
 
-```
+```Swift
 import Foundation
 
 let cal = Calendar(identifier: .gregorian)
@@ -68,7 +68,7 @@ print("\(df.string(from: day)): \(res.year!) 年と \(res.month!) ヶ月と \(re
 
 ## JavaScript
 
-```
+```JavaScript
 const Relativedelta = require('./Relativedelta');
 
 function fmtDate(day) {
@@ -93,7 +93,7 @@ console.log(
 
 ## C
 
-```
+```C
 #include "relativedelta.h"
 
 int main(void) {
